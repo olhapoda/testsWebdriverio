@@ -11,13 +11,10 @@ describe('Logout Test With Order', () => {
     const menuButton = await $('.bm-burger-button')
     const clickLogoutButton = await $('[data-test="logout-sidebar-link"]')
     
-    await addButton.waitForClickable({ timeout: 5000 })
     await addButton.click();
 
-    await menuButton.waitForClickable({ timeout: 5000 })
     await menuButton.click();
 
-    await clickLogoutButton.waitForClickable({ timeout: 5000 })
     await clickLogoutButton.click()
   
     await Login.login();

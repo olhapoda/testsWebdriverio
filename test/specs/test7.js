@@ -13,7 +13,6 @@ describe('Social Media Buttons Test', () => {
       const link = await item.$('a');
       let href = await link.getAttribute('href')
 
-      // Підміна twitter.com на x.com
       if (href.includes('twitter.com')) {
         href = href.replace('twitter.com', 'x.com')
       }
