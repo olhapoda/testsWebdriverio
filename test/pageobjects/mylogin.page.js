@@ -3,8 +3,8 @@ class Login {
   get password() { return $('[data-test="password"]'); }
   get loginBtn() { return $('[data-test="login-button"]'); }
 
-  async open() {
-    await browser.url(baseUrl);
+  async open(path = '') {
+    await browser.url(path); 
   }
 
   async login(user = 'standard_user', pass = 'secret_sauce') {
