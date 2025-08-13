@@ -1,4 +1,3 @@
-import { remote } from 'webdriverio'
 describe('Login Test With Wrong Password', () => {
   it('should warn about unsuccsessfull login', async () => {
 

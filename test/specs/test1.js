@@ -1,4 +1,3 @@
-import { remote } from 'webdriverio'
 describe('Login Test', () => {
   it('should login successfully and move to next page', async () => {
 

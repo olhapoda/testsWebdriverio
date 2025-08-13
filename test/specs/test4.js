@@ -1,4 +1,3 @@
-import { remote } from 'webdriverio'
 import Login from '/testask/test/pageobjects/login.js';
 describe('Logout Test', () => {
    beforeEach(async () => {
