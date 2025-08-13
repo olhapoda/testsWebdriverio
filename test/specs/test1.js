@@ -3,8 +3,6 @@ describe('Login Test', () => {
   
   it('should login successfully and move to next page', async () => {
 
-await browser.url('https://www.saucedemo.com')
-
 await Login.open()
 await Login.login('standard_user', 'secret_sauce')
 
