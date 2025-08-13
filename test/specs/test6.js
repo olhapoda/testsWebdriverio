@@ -1,4 +1,4 @@
-import Login from './login.js';
+import Login from '/testask/test/pageobjects/login.js';
 
 describe('Sorting Options Test', () => {
   beforeEach(async () => {

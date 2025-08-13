@@ -1,4 +1,4 @@
-import Login from './login.js';
+import Login from '/testask/test/pageobjects/login.js';
 import Chance from 'chance';
 
 describe('Making An Order Test', () => {

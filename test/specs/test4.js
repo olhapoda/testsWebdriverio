@@ -1,5 +1,5 @@
 import { remote } from 'webdriverio'
-import Login from './login.js';
+import Login from '/testask/test/pageobjects/login.js';
 describe('Logout Test', () => {
    beforeEach(async () => {
       await Login.open()
