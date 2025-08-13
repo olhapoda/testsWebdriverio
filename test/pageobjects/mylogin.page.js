@@ -4,7 +4,7 @@ class Login {
   get loginBtn() { return $('[data-test="login-button"]'); }
 
   async open() {
-    await browser.url('https://www.saucedemo.com');
+    await browser.url(baseUrl);
   }
 
   async login(user = 'standard_user', pass = 'secret_sauce') {
