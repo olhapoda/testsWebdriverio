@@ -1,14 +1,9 @@
+import Login from '../pageobjects/mylogin.page.js'
 describe('Login Test With Wrong Username', () => {
   it('should warn about unsuccsessfull login', async () => {
 
-await browser.url('https://www.saucedemo.com')
+await Login.open()
+await Login.login('standard_userA', 'secret_sauce')
 
-const toLogin = await browser.$('[data-test="username"]')
-const toPassword = await browser.$('[data-test="password"]')
-const clickLoginButton = await browser.$('[data-test="login-button"]')
-
-await toLogin.setValue('standard_userA')
-await toPassword.setValue('secret_sauce')
-await clickLoginButton.click()
  });
 });
