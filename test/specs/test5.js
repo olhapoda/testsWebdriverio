@@ -1,4 +1,4 @@
-import Login from '/testask/test/pageobjects/login.js'
+import Login from '../pageobjects/mylogin.page.js'
 
 describe('Logout Test With Order', () => {
   beforeEach(async () => {
