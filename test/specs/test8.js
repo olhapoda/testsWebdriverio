@@ -9,13 +9,10 @@ describe('Making An Order Test', () => {
 
   it('should make an order successfully', async () => {
     const addToCartButton = await browser.$('[data-test="add-to-cart-sauce-labs-backpack"]')
-    await addToCartButton.waitForClickable({ timeout: 5000 })
     await addToCartButton.click()   
     const cartButton = await browser.$('[data-test="shopping-cart-link"]')
-    await cartButton.waitForClickable({ timeout: 5000 })
     await cartButton.click()
     const checkoutButton = await browser.$('[data-test="checkout"]')
-    await checkoutButton.waitForClickable({ timeout: 5000 })
     await checkoutButton.click()
 
     const chance = new Chance()
@@ -29,15 +26,12 @@ describe('Making An Order Test', () => {
     await postalCode.setValue(randomPostalCode)
 
     const continueButton = await browser.$('[data-test="continue"]')
-    await continueButton.waitForClickable({ timeout: 5000 })
     await continueButton.click()
 
     const finishButton = await browser.$('[data-test="finish"]')
-    await finishButton.waitForClickable({ timeout: 5000 })
     await finishButton.click()
 
     const backToButton = await browser.$('[data-test="back-to-products"]')
-    await backToButton.waitForClickable({ timeout: 5000 })
     await backToButton.click()
     });
 });

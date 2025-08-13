@@ -1,35 +1,42 @@
-import Login from '/testask/test/pageobjects/login.js';
+import Login from '/testask/test/pageobjects/login.js'
 
 describe('Social Media Buttons Test', () => {
   beforeEach(async () => {
-    await Login.open();
-    await Login.login();
+    await Login.open()
+    await Login.login()
   });
 
   it('should open each social link and return correctly', async () => {
-  const socials = await $('.social').$$('li');
-  for (const item of socials) {
-    const link = await item.$('a');
-    const href = await link.getAttribute('href');
+    const socials = await $('.social').$$('li')
+    
+    for (const item of socials) {
+      const link = await item.$('a');
+      let href = await link.getAttribute('href')
 
-    const parentHandle = await browser.getWindowHandle();
-    await link.click();
+      // Підміна twitter.com на x.com
+      if (href.includes('twitter.com')) {
+        href = href.replace('twitter.com', 'x.com')
+      }
 
-    await browser.waitUntil(
-      async () => (await browser.getWindowHandles()).length > 1,
-      { timeout: 5000, timeoutMsg: 'New window did not open' }
-    );
+      const parentHandle = await browser.getWindowHandle()
+      await link.click();
 
-    const handles = await browser.getWindowHandles();
-    const newHandle = handles.find(h => h !== parentHandle);
+      await browser.waitUntil(
+        async () => (await browser.getWindowHandles()).length > 1,
+        { timeout: 5000, timeoutMsg: 'New window did not open' }
+      );
 
-    await browser.switchToWindow(newHandle);
-    await expect(browser).toHaveUrl(href);
+      const handles = await browser.getWindowHandles();
+      const newHandle = handles.find(h => h !== parentHandle)
 
-    await browser.pause(2000);
+      await browser.switchToWindow(newHandle)
 
-    await browser.closeWindow();
-    await browser.switchToWindow(parentHandle);
-  }
-});
+      await expect(browser).toHaveUrl(href)
+
+      await browser.pause(2000)
+
+      await browser.closeWindow()
+      await browser.switchToWindow(parentHandle)
+    }
+  });
 });
