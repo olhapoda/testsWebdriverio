@@ -37,5 +37,6 @@ describe('Social Media Buttons Test', () => {
       await browser.closeWindow()
       await browser.switchToWindow(parentHandle)
     }
+    
   });
 });

@@ -11,5 +11,6 @@ const clickLogoutButton = await browser.$('[data-test="logout-sidebar-link"]')
 
 await menuButton.click()
 await clickLogoutButton.click()
+
  });
 });

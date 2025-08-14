@@ -17,7 +17,7 @@ describe('Sorting Options Test', () => {
       await select.selectByVisibleText(label)          
       const firstItem = await $('.inventory_item_name')
       await firstItem.waitForDisplayed({ timeout: 5000 })
-    
     }
+    
   });
 });
