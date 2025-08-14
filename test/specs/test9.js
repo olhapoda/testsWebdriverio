@@ -10,7 +10,7 @@ describe('Cart Button Test', () => {
   it('should not allow making an empty order', async () => {
     await Cart.openCartAndCheckout();
 
-    const errorMessage = await $('[data-test="error-message"]');
+    const errorMessage = await $('[data-test="error-button"]');
     await expect(errorMessage).toBeDisplayed();
     
   });
