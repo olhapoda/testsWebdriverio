@@ -1,4 +1,5 @@
 import Login from '../pageobjects/mylogin.page.js'
+import Cart from '../pageobjects/cart.page.js'
 import Chance from 'chance';
 
 describe('Making An Order Test', () => {
@@ -10,10 +11,8 @@ describe('Making An Order Test', () => {
   it('should make an order successfully', async () => {
     const addToCartButton = await browser.$('[data-test="add-to-cart-sauce-labs-backpack"]')
     await addToCartButton.click()   
-    const cartButton = await browser.$('[data-test="shopping-cart-link"]')
-    await cartButton.click()
-    const checkoutButton = await browser.$('[data-test="checkout"]')
-    await checkoutButton.click()
+    
+    await Cart.openCartAndCheckout();
 
     const chance = new Chance()
     const randomPostalCode = Math.floor(Math.random() * 90000) + 10000

@@ -1,4 +1,5 @@
 import Login from '../pageobjects/mylogin.page.js'
+import Cart from '../pageobjects/cart.page.js'
 
 describe('Cart Button Test', () => {
   beforeEach(async () => {
@@ -7,11 +8,7 @@ describe('Cart Button Test', () => {
   });
 
   it('should not allow making an empty order', async () => {
-    const cartButton = await $('[data-test="shopping-cart-link"]');
-    await cartButton.click();
-
-    const checkoutButton = await $('[data-test="checkout"]');
-    await checkoutButton.click();
+    await Cart.openCartAndCheckout();
 
     const errorMessage = await $('[data-test="error-message"]');
     await expect(errorMessage).toBeDisplayed();
