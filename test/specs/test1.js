@@ -8,6 +8,7 @@ await Login.login('standard_user', 'secret_sauce')
 
 const productsPage = await browser.$('.title')
     await productsPage.waitForDisplayed({ timeout: 5000 })
+    
  });
 });
 
