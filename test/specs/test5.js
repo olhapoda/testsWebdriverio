@@ -22,5 +22,6 @@ describe('Logout Test With Order', () => {
     const productsHeading = await $('.title');
     await productsHeading.waitForDisplayed({ timeout: 5000 })
     await expect(productsHeading).toHaveText('Products')
+    
   });
 });
